@@ -10,14 +10,17 @@ lerna-debug.log*
 node_modules/
 */node_modules/ # Ignores node_modules in any direct subfolder (like your frontend and backend)
 build/
-dist/
-*/dist/
+# dist/       # COMMENT OUT or REMOVE this line
+# */dist/     # COMMENT OUT or REMOVE this line
+
+# Add an explicit exception for your frontend's build output
+!/shanvika-infrastructures/dist/ # This line explicitly UN-IGNORES the dist folder within shanvika-infrastructures
 
 # Environment variables
-.env                # Ignores .env in the root
+.env                 # Ignores .env in the root
 .env.* # Catches files like .env.local, etc. in the root
-**/.env             # THIS IS THE NEW LINE: Ignores .env in any subdirectory
-**/.env.* # THIS IS THE NEW LINE: Ignores .env.local, etc. in any subdirectory
+**/.env              # Ignores .env in any subdirectory
+**/.env.* # Ignores .env.local, etc. in any subdirectory
 
 # Editor directories and files
 .vscode/*
