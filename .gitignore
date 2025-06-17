@@ -8,15 +8,17 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependencies and Build Outputs
-node_modules/ # Ignores top-level node_modules
+node_modules/
 */node_modules/ # Ignores node_modules in any direct subfolder (like your frontend and backend)
-build/ # React build output
-dist/ # Common build output folder
-*/dist/ # dist inside subfolders
+build/
+dist/
+*/dist/
 
 # Environment variables
-.env # All variations of .env files
-.env.* # Catches files like .env.local, .env.development, .env.production, etc.
+.env                # Ignores .env in the root
+.env.* # Catches files like .env.local, etc. in the root
+**/.env             # THIS IS THE NEW LINE: Ignores .env in any subdirectory
+**/.env.* # THIS IS THE NEW LINE: Ignores .env.local, etc. in any subdirectory
 
 # Editor directories and files
 .vscode/*
